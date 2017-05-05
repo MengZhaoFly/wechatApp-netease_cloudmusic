@@ -1,0 +1,36 @@
+/**index.wxss**/
+.header{
+  color: #888;
+}
+.listen-content .item{
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  
+}
+.bg-img{
+  width: 30px;
+  height:30px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.count{
+  color: #888888;
+}
+.listen-content .bg-img{
+  width: 50px;
+  height: 50px;
+}
+.header{
+  padding-left: 15px;
+  background-color: #eeeff0;
+}
+.listen-content .weui-cell:first-child{
+
+}
+.weui-cells::before {
+border-top:none;
+
+
+}

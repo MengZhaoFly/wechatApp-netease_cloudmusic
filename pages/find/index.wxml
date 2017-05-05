@@ -1,0 +1,139 @@
+<!--index.wxml-->
+<view class="container">
+  
+   <view class="weui-search-bar">
+
+            <view class="weui-search-bar__form">
+                <view class="weui-search-bar__box">
+                <!--搜索icon + input + 叉叉icon -->
+                    <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                    <input type="text" class="weui-search-bar__input" placeholder="搜索"
+                           value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+                    <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                        <icon type="clear" size="14"></icon>
+                    </view>
+                </view>
+                <!--focus时 搜索icon-->
+                <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+                    <icon class="weui-icon-search" type="search" size="14"></icon>
+                    <view class="weui-search-bar__text">搜索</view>
+                </label>
+            </view>
+            <!--取消按钮-->
+            <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+        </view>
+        <view class="searchbar-result" style="overflow-y: scroll;">
+          <view class="weui-cells" wx:if="{{inputVal.length > 0}}" style="overflow-y: scroll;" >
+          <block wx:for="{{searchReault}}" wx:key="item" style="overflow-y: scroll;">
+            <navigator url="../now/index" class="weui-cell" hover-class="weui-cell_active"
+            data-id="{{item.id}}" data-name="{{item.name}}" data-songUrl="{{item.mp3Url}}" data-picUrl="{{item.picUrl}}" 
+            data-singer="{{item.singer}}"
+             open-type="switchTab" bindtap="tonow">
+                  <view class="weui-cell__bd">
+                      <view class="song-name">{{item.name}}
+                        <text class="song-singer">{{item.singer}}</text>
+                      </view>
+                  </view>
+              </navigator>
+              
+          
+          
+          </block>
+              
+          </view>
+        </view>
+        <!--输入文字 则隐藏-->
+      <view class="other-content" hidden="{{inputVal.length > 0}}" >
+          <view class="weui-tab">
+                <view class="weui-navbar">
+                    <block wx:for="{{tabs}}" wx:key="*this">
+                        <view id="{{index}}"
+                            class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+                            <view class="weui-navbar__title">{{item}}
+                                
+                            </view>
+                        </view>
+                    </block>
+                    <view class="weui-navbar__slider" 
+                      style="left: {{sliderLeft}}px;  transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({                                      {sliderOffset}}px);">
+                    </view>
+                </view>
+                <view class="weui-tab__panel">
+                <!--选项一-->
+                    <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+                        <swiper indicator-dots="{{indicatorDots}}" circular="{{circular}}" indicator-active-color="#D43C33"
+                            autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+                          <block wx:for="{{imgUrls}}" wx:key="item">
+                            <swiper-item>
+                              <image src="{{item}}" class="slide-image" width="355" height="150"/>
+                            </swiper-item>
+                          </block>
+                        </swiper>
+                        <!--中部三圆圈-->
+                        <view class="three-circle">
+                          <view class="weui-grids">
+                                <navigator url="" class="weui-grid" hover-class="weui-grid_active">
+                                    <image class="weui-grid__icon" src="../../images/fm.png" />
+                                    <view class="weui-grid__label">私人FM</view>
+                                </navigator>
+                                <navigator url="" class="weui-grid" hover-class="weui-grid_active">
+                                    <image class="weui-grid__icon" src="../../images/tuijian.png" />
+                                    <view class="weui-grid__label">每日歌曲推荐</view>
+                                </navigator>
+                                <navigator url="" class="weui-grid" hover-class="weui-grid_active">
+                                    <image class="weui-grid__icon" src="../../images/hot.png" />
+                                    <view class="weui-grid__label">云音乐热歌榜</view>
+                                </navigator>
+                        </view>
+                        
+                        </view>
+                        <!--推荐歌单 >>>>-->
+                        <view class="tuijian-lists">
+                            <view class="header">
+                                 <text>推荐歌单</text><text>></text>
+                            </view>
+                            <view class="lists-content">
+                                   
+                                    <navigator url=""  hover-class="weui-grid_active">
+                                       <view class="image image1" style="background: url(http://p1.music.126.net/GzC0QJKZc9tQp53GzhafBg==/19073228207135019.jpg?param=140y140) no-repeat"></view>
+                                       
+                                        <view class="">考验听力的时候|一首歌证明你是hlhkllhlk</view>
+                                    </navigator>
+                                    <navigator url=""  hover-class="weui-grid_active">
+                                     <view class="image image2" style="background: url(http://p1.music.126.net/4L--5jGuNNCdRxL10n_0-g==/19057835044326350.jpg?param=140y140) no-repeat"></view>
+                                        <view class="">华语白首| 回忆伤人无声，唱不尽</view>
+                                    </navigator>
+                                    <navigator url=""  hover-class="weui-grid_active">
+                                       <view class="image image3" style="background: url(http://p1.music.126.net/XV6WbcLmt3QwHytlDVTASA==/6017627139284599.jpg?param=140y140) no-repeat"></view>
+                                        <view class="">钢琴的轻吟</view>
+                                    </navigator>
+                                    <navigator url=""  hover-class="weui-grid_active">
+                                       <view class="image image1" style="background: url(http://p1.music.126.net/n6IZQhyzUU88gKDhbBNfcw==/18977570695447756.jpg?param=140y140) no-repeat"></view>
+                                        <view class="">入耳便爱上的英文歌曲</view>
+                                    </navigator>
+                                    <navigator url=""  hover-class="weui-grid_active">
+                                     <view class="image image2" style="background: url(http://p4.music.126.net/oKvLxuRCt_ku8XZGUvR-EA==/3173190557815242.jpg?param=140y140) no-repeat"></view>
+                                        <view class="">一名90后看过的香港电影</view>
+                                    </navigator>
+                                    <navigator url=""  hover-class="weui-grid_active">
+                                       <view class="image image3" style="background: url(http://p1.music.126.net/SS9d80J6hCfkexH_eFPz8g==/18998461416443720.jpg?param=140y140) no-repeat"></view>
+                                        <view class="">老歌曲终究经得起时间推敲</view>
+                                    </navigator>
+                            
+                                
+                            </view>
+                               
+                            
+                            
+                        
+                        </view>
+                    
+                    </view>
+                    <view class="weui-tab__content" hidden="{{activeIndex != 1}}">选项二的内容</view>
+                    <view class="weui-tab__content" hidden="{{activeIndex != 2}}">选项三的内容</view>
+                    <view class="weui-tab__content" hidden="{{activeIndex != 3}}">排行榜</view>
+                </view>
+            </view>
+      </view>
+        
+</view>

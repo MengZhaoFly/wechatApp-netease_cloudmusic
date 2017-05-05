@@ -1,0 +1,50 @@
+<!--index.wxml-->
+<view class="container">
+
+    
+        <view class="weui-cells weui-cells_after-title">
+            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="bg-img" style="background-image:url(http://op4j4esv2.bkt.clouddn.com/localmusic.png);"></view>
+                <view class="weui-cell__bd">本地播放</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access">0</view>
+            </navigator>
+            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="bg-img" style="background-image: url(http://op4j4esv2.bkt.clouddn.com/recent.png);"></view>
+                <view class="weui-cell__bd">最近播放</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access">100</view>
+            </navigator>
+             <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="bg-img" style="background-image: url(http://op4j4esv2.bkt.clouddn.com/mytel.png);"></view>
+                <view class="weui-cell__bd">我的电台</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access">0</view>
+            </navigator>
+             <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="bg-img" style="background-image: url(http://op4j4esv2.bkt.clouddn.com/myshoucang.png);"></view>
+                <view class="weui-cell__bd">我的收藏</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access">1</view>
+            </navigator>
+        </view>
+ <view class="header">我的歌单</view>
+ <view class="listen-content">
+        <view class="weui-cells weui-cells_after-title">
+            <navigator url="" class="weui-cell " hover-class="weui-cell_active">
+            <view class="bg-img" style="background-image:url(http://p1.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg);">
+          
+            </view>
+                <view class="weui-cell__bd">本地播放
+                    <view class="count">41首</view>
+                </view>   
+            </navigator>
+
+            <navigator url="" class="weui-cell " hover-class="weui-cell_active">
+            <view class="bg-img" style="background-image:url(http://p1.music.126.net/lFj9dsCs9ucmrZlUQ_NcKQ==/3273246117440964.jpg);">
+            </view>
+                <view class="weui-cell__bd">最近
+                    <view class="count">13首</view>
+                </view>   
+            </navigator>
+        </view>
+
+ </view>
+ 
+</view>

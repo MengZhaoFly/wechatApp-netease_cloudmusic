@@ -1,0 +1,145 @@
+/**index.wxss**/
+page{
+  width: 100%;
+  height: 100%;
+}
+.container {
+  position: relative;
+  overflow: hidden;
+}
+.container-content{
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+ height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+.cicle-infor{
+  width: 230px;
+  height: 230px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+ animation: rotate 10s linear infinite forwards;
+  margin: 0 auto;
+ 
+
+}
+@keyframes rotate{
+  0%{
+    transform: rotate(0deg)
+  }100%{
+    transform: rotate(360deg)
+  }
+}
+.fengmian{
+ flex: 1;
+ display: flex;
+ align-items: center;
+}
+.other-content{
+  height: 170px;
+}
+.container{
+  text-align: center;
+}
+.icon-choose{
+ 
+}
+.icon-choose, .operations{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.icon{
+  width: 30px;
+  height: 30px;
+  background-size: cover;
+  margin: 10px;
+}
+.like{
+  background-image:url(http://op4j4esv2.bkt.clouddn.com/like.png) ;
+}
+.download{
+  background-image:url(http://op4j4esv2.bkt.clouddn.com/download.png) ;
+  
+}
+.add{
+  background-image:url(http://op4j4esv2.bkt.clouddn.com/add.png) ;
+  
+}
+.btn{
+    width: 40px;
+  height: 40px;
+  background-size: cover;
+  margin: 10px;
+}
+.prev{
+  background-image:url(http://op4j4esv2.bkt.clouddn.com/pre.png) ;
+
+}
+.play, .pause{
+  background-image:url(http://op4j4esv2.bkt.clouddn.com/play.png) ;
+    width: 50px;
+  height: 50px;
+
+}
+.pause{
+  background-image:url(http://op4j4esv2.bkt.clouddn.com/pause.png) ;
+  
+}
+.next{
+  background-image:url(http://op4j4esv2.bkt.clouddn.com/next.png) ;
+
+}
+.active{
+  color: #fff;
+}
+.lists{
+  position: absolute;
+  bottom: 0;
+  
+  /*transform: translateY(170px);*/
+  z-index: 3;
+  background-color: #F4F5F5;
+  width: 100%;
+  transition: all .5s;
+  
+}
+.lists radio-group{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 170px;
+  overflow-y: scroll;
+}
+.lists radio-group label{
+  padding: 5px 0 5px 20px;
+}
