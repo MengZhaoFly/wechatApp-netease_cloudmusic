@@ -10,7 +10,7 @@
   <!--歌词-->
 <view class="lyric-content" hidden="{{islyric}}" style="height:401px; overflow-y: scroll;" bindtap="showCircle">
   <view class="lyric"  style="overflow-y: scroll;">
-      <block wx:for="{{lyricArr}}">
+      <block wx:for="{{lyricArr}}" >
 
         <view> {{item}} </view>
       </block>
@@ -47,7 +47,7 @@
   </view>
   <view class="lists"  style="transform: translateY({{percent}})">
     <radio-group class="radio-group" bindchange="radioChange">
-  <label class="radio" wx:for="{{items}}">
+  <label class="radio" wx:for="{{items}}" >
     <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
   </label>
 </radio-group>

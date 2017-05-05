@@ -1,5 +1,7 @@
 //index.js
 //获取应用实例
+// var Music = require('../../backgroundMusic.js')
+// console.log('music',Music)
 var app = getApp()
 Page({
   data: {
@@ -92,28 +94,31 @@ Page({
           
         }
         let url = that.data.src
+       
         // 播放
         wx.playBackgroundAudio({
           dataUrl: url,
           title: value.name,
           coverImgUrl: value.picUrl,
           success: function () {
-            setTimeout(function(){
+             console.log('url',url)
+             setTimeout(function(){
                 wx.getBackgroundAudioPlayerState({
-                success: function (res) {
+                  success: function (res) {
+                    var tempduration = res.duration
+                    console.log('get bg success', tempduration, res)
+                    // 设置时长
+                    that.setData({
+                      sumduration: tempduration
+                    })
+                  },
+                  complete: function (res) {
+                    console.log(' get bg complete:', res)
+                  }
+                })
+             },1000)
                 
-                  var tempduration = res.duration
-                  console.log('get bg success', tempduration, res)
-                  // 设置时长
-                  that.setData({
-                    sumduration: tempduration
-                  })
-                },
-                complete: function (res) {
-                  console.log(' get bg complete:', res)
-                }
-              })
-            },1000)
+           
             
           },
           complete:function(){
