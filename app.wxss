@@ -1,0 +1,127 @@
+/**app.wxss**/
+@import 'style/weui.wxss';
+.container {
+  height: 100%;
+ width: 100%;
+  box-sizing: border-box;
+  font-size: 16px;
+    font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+} 
+.searchbar-result{
+  position: fixed;
+  left: 0;
+  top: 26px;
+  width: 100%;
+
+}
+.weui-navbar__item.weui-bar__item_on {
+color:#D43C33;
+
+}
+.weui-navbar__slider {
+background-color:#D43C33;
+
+}
+swiper image{
+  width: 100%;
+}
+.three-circle .weui-grids navigator{
+  background-color: #fff;
+  border-right:none;
+
+}
+.weui-grid__label {
+font-size:12px;
+
+
+}
+.weui-grid__icon {
+width:40px;
+height:40px;
+margin:0 auto;
+}
+.header{
+  position: relative;
+  background-color: #fff;
+}
+.header text{
+  font-size:20px;
+  font-weight:400;
+  padding: 20px 0;
+}
+.header text:first-child{
+  padding-left: 15px;
+  
+}
+.header text:first-child::before{
+  content: '';
+  display: inline-block;
+  width: 2px;
+  height: 20px;
+  vertical-align: middle;
+  background-color: #D43C33;
+  position: absolute;
+  left: 0;
+  top: 6px;
+}
+.header text:last-child{
+  padding-left: 10px;
+}
+.lists-content{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  
+}
+.lists-content navigator{
+  width: calc((100% - 8px) / 3);
+  margin-top: 12px;
+}
+.lists-content .image{
+width: 100%;
+  height: 130px;
+  margin: 0 auto;
+
+}
+.image{
+  
+  background-size: cover;
+}
+.lists-content navigator view:last-child{
+  font-size: 14px;
+  width: 100%;
+  height: 44px;
+  margin-top: 5px;
+  display:block;white-space: normal; overflow: hidden; text-overflow:ellipsis;
+  
+}
+.weui-cells::after {
+border-bottom:none;
+
+
+}
+.weui-cell::before {
+left:60px;
+
+}
+.weui-cell__bd{
+  padding-left: 15px;
+}
+.listen-content .weui-cell::before {
+left:80px;
+
+}
+.searchbar-result .weui-cell::before {
+left: 0;
+
+}
+.searchbar-result .weui-cells{
+  overflow-y: scroll;
+}
+
+
+
+
+
+
+
