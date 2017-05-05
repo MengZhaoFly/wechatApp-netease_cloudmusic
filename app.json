@@ -1,0 +1,42 @@
+{
+  "pages":[
+    "pages/find/index",
+    "pages/my/index",
+    "pages/now/index",
+    "pages/account/index",
+    "pages/index/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#D43C33",
+    "navigationBarTitleText": "网易云音乐",
+    "navigationBarTextStyle":"white",
+    "backgroundColor": "#FBFCFD"
+  },
+  "tabBar": {
+    "backgroundColor":"#2A2C2E",
+    "color": "#a7a7a7",
+     "selectedColor": "#ffffff",
+    "list": [{
+      "iconPath":"./images/find.png",
+      "selectedIconPath":"./images/find1.png",
+      "pagePath":"pages/find/index",
+      "text": "发现音乐"
+    }, {
+      "iconPath":"./images/my.png",
+      "selectedIconPath":"./images/my1.png",
+      "pagePath": "pages/my/index",
+      "text": "我的音乐"
+    }, {
+      "iconPath":"./images/now.png",
+      "selectedIconPath":"./images/now1.png",
+      "pagePath": "pages/now/index",
+      "text": "正在播放"
+    }, {
+      "iconPath":"./images/account.png",
+      "selectedIconPath":"./images/account1.png",
+      "pagePath": "pages/account/index",
+      "text": "账号"
+    }]
+  }
+}
