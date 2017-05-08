@@ -1,3 +1,5 @@
+![](https://img.shields.io/badge/language-js-orange.svg)
+![](https://img.shields.io/badge/platform-wechat-lightgrey.svg)
 ## 从一个hello world开始
 微信开发者工具生成 目录如下：
 ```
