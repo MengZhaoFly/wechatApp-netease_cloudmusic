@@ -42,7 +42,7 @@
 ## 官方组件不够,weui来凑
 补充两个常用组件
 1. navbar
-![navbar}()
+![navbar}(https://github.com/MengZhaoFly/wechatApp-netease_cloudmusic/blob/master/results/tabbar.gif)
 ```html
 <!-- wxml -->
 <view class="weui-tab">
@@ -94,7 +94,7 @@ Page({
 了解mvvm思想的同学不难看出 通过tabs数组渲染出来选项后每次点击获取id 然后通过设置hidden显示或隐藏
 
 2. searchbar
-![searchbar]()
+![searchbar](https://github.com/MengZhaoFly/wechatApp-netease_cloudmusic/blob/master/results/searchbar.gif)
 ```html
         <view class="weui-search-bar">
             <view class="weui-search-bar__form">
