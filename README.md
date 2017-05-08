@@ -28,7 +28,7 @@
 
 ## 开发者文档走马观花
 **app.json:** 注册pages window tabBar networkTimeout<br>
-![组件说明](https://mp.weixin.qq.com/debug/wxadoc/dev/component/)<br>
+>[组件说明](https://mp.weixin.qq.com/debug/wxadoc/dev/component/)<br>
 ***.js:** 作为逻辑层 与wxml交互 有着丰富的 
 网络，
 媒体，
@@ -37,6 +37,6 @@
 位置，
 设备，
 界面...的api<br>
-![官方文档](https://mp.weixin.qq.com/debug/wxadoc/dev/api/)<br>
+>[官方文档](https://mp.weixin.qq.com/debug/wxadoc/dev/api/)<br>
 ***.wxml:** 数据驱动的视图层 +  微信提供了大量的组件 表单 导航 媒体 ...
 
