@@ -47,7 +47,7 @@ Page({
         });
         // let url = `http://localhost:3000/search?keywords=${e.detail.value}`
         wx.request({
-            url: 'http://localhost:3000/search',
+            url: 'http://neteasemusic.leanapp.cn/search',
             data: {
                 keywords: e.detail.value
             },

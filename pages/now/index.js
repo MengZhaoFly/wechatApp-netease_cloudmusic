@@ -218,7 +218,7 @@ function sliderToseek(e, cb) {
 // 获取歌词
 function getlyric(id,cb) {
   console.log('id:',id)
-  let url = `http://localhost:3000/lyric`
+  let url = `http://neteasemusic.leanapp.cn/lyric`
   wx.request({
     url: url,
     data: {
