@@ -151,6 +151,15 @@ Page({
 ```
 input上面有一层label 通过Page里面状态的改变而操作其wxml状态的改变<br>
 不难体会到：小程序和Vue的思想还是挺接近的
+## 站在巨人的肩膀上---获取云音乐api
+>[巨人的源github项目](https://github.com/Binaryify/NeteaseCloudMusicApi)<br>
+>[详细文档](https://binaryify.github.io/NeteaseCloudMusicApi/#/?id=neteasecloudmusicapi)<br>
 
+在此我将他部署到leancloud上<br>
+即可在线访问，免去烦人的本地localhost启动,在线url<br>
+http://neteasemusic.leanapp.cn<br>
+调用例子:<br>
+http://neteasemusic.leanapp.cn/search?keywords=海阔天空<br>
+http://neteasemusic.leanapp.cn/lyric?id=347230<br>
 
 
