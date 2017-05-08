@@ -41,8 +41,8 @@
 ***.wxml:** 数据驱动的视图层 +  微信提供了大量的组件 表单 导航 媒体 ...
 ## 官方组件不够,weui来凑
 补充两个常用组件
-1. navbar
-![navbar}(https://github.com/MengZhaoFly/wechatApp-netease_cloudmusic/blob/master/results/tabbar.gif)
+1. navbar<br>
+![navbar](https://github.com/MengZhaoFly/wechatApp-netease_cloudmusic/blob/master/results/tabbar.gif)
 ```html
 <!-- wxml -->
 <view class="weui-tab">
