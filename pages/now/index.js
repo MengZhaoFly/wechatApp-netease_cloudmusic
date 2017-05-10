@@ -1,7 +1,7 @@
 //index.js
 //获取应用实例
-// var Music = require('../../backgroundMusic.js')
-// console.log('music',Music)
+var Common = require('../../common')
+
 var app = getApp()
 Page({
   data: {
@@ -52,6 +52,10 @@ Page({
       })
   },
   onLoad: function () {
+      wx.showLoading({
+      title: '加载中',
+      mask: true
+  })
     console.log('正在播放 onLoad')
     var that = this
     //调用应用实例的方法获取全局数据
@@ -83,7 +87,6 @@ Page({
             src: value.mp3Url,
             poster: value.picUrl,
             author: value.singer
-            
           })
          getlyric(id,function(data, lyricArr){
            that.setData({
@@ -93,14 +96,15 @@ Page({
          })
           
         }
-        let url = that.data.src
+        let url = that.data.src || value.mp3Url;
        
         // 播放
         wx.playBackgroundAudio({
-          dataUrl: url,
+          dataUrl: value.mp3Url,
           title: value.name,
           coverImgUrl: value.picUrl,
           success: function () {
+            wx.hideLoading()
              console.log('url',url)
              setTimeout(function(){
                 wx.getBackgroundAudioPlayerState({
@@ -117,12 +121,10 @@ Page({
                   }
                 })
              },1000)
-                
-           
-            
           },
           complete:function(){
             // 获取正在播放的信息
+            console.log('play',url)
          
           }
         })
@@ -192,6 +194,7 @@ function prevSong(that){
           })
           console.log(currentSongIndex)
           currentSongIndex -- ;
+          console.log(res.data[currentSongIndex])
           wx.playBackgroundAudio({
             dataUrl: res.data[currentSongIndex].mp3Url
           })
@@ -257,3 +260,4 @@ function getlyric(id,cb) {
     }
   })
 }
+// ----------------------------------------------------

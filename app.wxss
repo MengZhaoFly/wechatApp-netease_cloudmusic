@@ -118,6 +118,9 @@ left: 0;
 .searchbar-result .weui-cells{
   overflow-y: scroll;
 }
+.weui-search-bar__cancel-btn{
+  color: #D43C33;
+}
 
 
 

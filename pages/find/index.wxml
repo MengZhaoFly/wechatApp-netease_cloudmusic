@@ -52,6 +52,7 @@
                             <view class="weui-navbar__title">{{item}}
                                 
                             </view>
+                            
                         </view>
                     </block>
                     <view class="weui-navbar__slider" 

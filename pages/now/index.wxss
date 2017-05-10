@@ -125,10 +125,10 @@ page{
 .lists{
   position: absolute;
   bottom: 0;
-  
+  opacity: .8;
   /*transform: translateY(170px);*/
   z-index: 3;
-  background-color: #F4F5F5;
+  background: linear-gradient(to top, transparent 0%, #D43C33 100%); 
   width: 100%;
   transition: all .5s;
   

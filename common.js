@@ -14,19 +14,32 @@ const operation = {
     // 播放音乐 参数:url title 图片url
     playMusic: function (url, title, pic) {
         return new Promise((resolve, reject) => {
-                wx.playBackgroundAudio({
+            wx.playBackgroundAudio({
                 dataUrl: url,
                 title: title,
                 coverImgUrl: pic,
-                success:function(){
+                success: function () {
                     resolve(true)
                 },
-                fail:function(){
+                fail: function () {
                     reject(new Error('播放错误'));
                 }
             })
         })
-        
+
+    },
+    asyncGetStorage: function (key) {
+        return new Promise((resolve, reject) => {
+            wx.getStorage({
+                key: key,
+                success: function (res) {
+                    resolve(res.data)
+                },
+                fail: function (err){
+                    reject(err)
+                }
+            })
+        })
     }
 }
 module.exports = operation

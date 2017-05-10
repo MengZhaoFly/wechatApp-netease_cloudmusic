@@ -87,6 +87,9 @@ Page({
             }
         })
     },
+    onShow: function(){
+        wx.hideLoading()
+    },
     onLoad: function () {
         var that = this;
         wx.getSystemInfo({
@@ -116,9 +119,5 @@ Page({
         wx.switchTab({
             url: '../now/index'
         })
-
-
-
-
     }
 });

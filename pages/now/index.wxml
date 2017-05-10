@@ -11,17 +11,13 @@
 <view class="lyric-content" hidden="{{islyric}}" style="height:401px; overflow-y: scroll;" bindtap="showCircle">
   <view class="lyric"  style="overflow-y: scroll;">
       <block wx:for="{{lyricArr}}" >
-
         <view> {{item}} </view>
       </block>
     </view>
-
 </view>
- 
+
   <!--选择操作-->
   <view class="other-content">
-
-
     <view class="icon-choose">
       <view class="download icon"></view>
       <view class="like icon"></view>
@@ -30,7 +26,6 @@
     <!--滑动条-->
     <view class="slider">
       <view class="section section_gap">
-
         <view class="body-view">
           <slider bindchange="slider3change" show-value activeColor="#D43C33" />
         </view>
@@ -50,7 +45,6 @@
   <label class="radio" wx:for="{{items}}" >
     <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
   </label>
-</radio-group>
-    
+</radio-group> 
   </view>
 </view>
