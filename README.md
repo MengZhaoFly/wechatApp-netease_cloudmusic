@@ -540,8 +540,8 @@ recent:最近<br>
  ```
 这样我们不知不觉进入多个回调嵌套的问题
 ## 代码优化，使用Promise,较为优雅地解决回调
-**小程序暂时不支持async await**
-在 common.js 中为小程序提供的api上裹上一层Promise，并且通过`module.exports = operation`暴露出去
+**小程序暂时不支持async await**<br>
+在 common.js 中为小程序提供的api上裹上一层Promise，并且通过`module.exports = operation`暴露出去<br>
 ```js
 const operation = {
     getMusicData: function () {
@@ -668,7 +668,7 @@ module.exports = operation
       })
   },
   ```
-  这样即可缩减部分代码，
+  这样即可缩减部分代码.
 
 
 
