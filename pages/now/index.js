@@ -70,66 +70,41 @@ Page({
     })
   },
   onShow: function () {
-    var that = this;
-    console.log('正在播放 is on show')
-    // 获取缓存
-    wx.getStorage({
-      key: 'clickdata',
-      success: function (res) {
-        var value = res.data
-        var id =  value.id
-        if (value) {
-         
-          // 设置到data
-          that.setData({
-            id:id,
-            name: value.name,
-            src: value.mp3Url,
-            poster: value.picUrl,
-            author: value.singer
-          })
-         getlyric(id,function(data, lyricArr){
-           that.setData({
-             lyricobj:data,
-             lyricArr:lyricArr
-           })
-         })
-          
-        }
-        let url = that.data.src || value.mp3Url;
-       
-        // 播放
-        wx.playBackgroundAudio({
-          dataUrl: value.mp3Url,
-          title: value.name,
-          coverImgUrl: value.picUrl,
-          success: function () {
-            wx.hideLoading()
-             console.log('url',url)
-             setTimeout(function(){
-                wx.getBackgroundAudioPlayerState({
-                  success: function (res) {
-                    var tempduration = res.duration
-                    console.log('get bg success', tempduration, res)
-                    // 设置时长
-                    that.setData({
-                      sumduration: tempduration
-                    })
-                  },
-                  complete: function (res) {
-                    console.log(' get bg complete:', res)
-                  }
-                })
-             },1000)
-          },
-          complete:function(){
-            // 获取正在播放的信息
-            console.log('play',url)
-         
-          }
+    let that = this;
+    Common.asyncGetStorage('clickdata')//本地缓存
+      .then(data => {
+        // console.log(data)
+        if (!data) return;
+        that.setData({
+          id: data.id,
+          name: data.name,
+          src: data.mp3Url,
+          poster: data.picUrl,
+          author: data.singer
         })
-      }
-    })
+        return Common.playMusic(data.mp3Url,  data.name, data.picUrl);
+      })
+      .then(status => {
+        if(!status) return;
+        wx.hideLoading();
+        console.log('id,',that.data.id)
+        return Common.getlyric(that.data.id)
+      })
+      .then((lyricArr) => {
+        console.log('lyricArr',lyricArr)
+        that.setData({
+          lyricArr: lyricArr
+        })
+        return Common.getMusicData()
+      })
+      .then(data => {
+        let tempduration = data.duration
+        console.log('get bg success', tempduration, data)
+        // 设置时长
+        that.setData({
+          sumduration: tempduration
+        })
+      })
   },
   audioPlay: function () {
     //背景音乐信息
