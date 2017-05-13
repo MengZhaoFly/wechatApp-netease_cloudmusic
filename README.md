@@ -669,7 +669,9 @@ module.exports = operation
   },
   ```
   这样即可缩减部分代码.
-
+***
+18届小前端求职中`['html/html5', 'css/css3', 'js/es5/es6', 'node']`
+<a href="mailto:1424254461@qq.com">1424254461@qq.com</a>
 
 
 
